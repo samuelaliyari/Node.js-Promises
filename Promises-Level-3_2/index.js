@@ -1,3 +1,4 @@
+
 const getTimeout = (num) => {
     return new Promise((resolve, reject) => {
         resolve(num)
@@ -7,8 +8,7 @@ const getTimeout = (num) => {
 const randomNum = (time) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const number = (Math.floor((Math.random() * 1000) + 1))
-            resolve(number)
+            resolve((Math.floor((Math.random() * 1000) + 1)))
         }, time)
     })
 }
