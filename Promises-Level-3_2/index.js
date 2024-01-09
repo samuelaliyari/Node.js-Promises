@@ -13,7 +13,10 @@ const randomNum = (time) => {
     })
 }
 
-getTimeout(3000).then(time => randomNum(time)).then(number => {
-    console.log(number)
-    return randomNum(number)
-}).then(number => console.log(number))
+// getTimeout(3000).then(time => randomNum(time)).then(number => {
+//     console.log(number)
+//     return randomNum(number)
+// }).then(number => console.log(number))
+
+
+Promise.all([getTimeout(3000), getTimeout(2000), getTimeout(5000)]).then(time => Promise.all([randomNum(time[0]), randomNum(time[1]), randomNum(time[2])])).then(num => console.log(num))
